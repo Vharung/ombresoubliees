@@ -1,0 +1,28 @@
+{
+    "name": "ombreoublie",
+    "title": "Ombres Oubliées",
+    "description": "The Ombres Oubliées system for FoundryVTT!",
+    "version": "0.0.01",
+    "minimumCoreVersion": "0.9",
+    "compatibleCoreVersion": "0.9",
+    "templateVersion": 2,
+    "author": "Vharung",
+    "esmodules": ["module/ombreoublie.js"],
+    "styles": ["css/ombreoublie.css"],
+    "scripts": [],
+    "languages": [
+      {
+        "lang": "fr",
+        "name": "Français",
+        "path": "lang/fr.json"
+      }
+    ],
+    "gridDistance": 1,
+    "gridUnits": "m",
+    "primaryTokenAttribute": "hp",
+    "secondaryTokenAttribute": "psy",
+    "url": "https://github.com/Vharung/ombresoubliees",
+    "manifest": "https://raw.githubusercontent.com/Vharung/ombresoubliees/main/system.json",
+    "download": "https://github.com/Vharung/ombreoubliees/archive/refs/heads/main.zip",
+    "license": "LICENSE.txt"
+}
