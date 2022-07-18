@@ -300,6 +300,7 @@ export class ombreoublieActorSheet extends ActorSheet {
             //dizaine de charisme
             var poin=Math.floor(chari/10)
             html.find('.dest').val(poin);
+            html.find('.destmin').val(poin);
 
 
 
@@ -519,40 +520,52 @@ export class ombreoublieActorSheet extends ActorSheet {
         //let posture = event.target.dataset["posture"];
         let bonus =this.actor.data.data.bonus;
         let malus =this.actor.data.data.malus;
-        let posture =this.actor.data.data.posture;
+        //let posture =this.actor.data.data.posture;
         const name = event.target.dataset["name"];
-        const jetdeDesFormule = monJetDeDes.replace("d", "d100");
-        var bonuspost=0;
+        /*var bonuspost=0;
         var critique=5;
         if(posture=="Focus"){
             bonuspost=5;
         }else if(posture=="Offensif"){
             critique=10;
+        }*/
+        var inforesult="";
+        if(name=="Attaque" || name=="Relance"){
+            monJetDeDes=maxstat+monJetDeDes;
+        }else {
+            monJetDeDes="1"+monJetDeDes;
+            if(bonus==""){bonus=0;}
+            if(malus==""){malus=0;}
+            inforesult=parseInt(maxstat)+parseInt(bonus)+parseInt(malus);
+            if(inforesult>95){
+                inforesult=95;
+            }else if(inforesult<5){
+                inforesult=5;
+            }
         }
 
-        if(bonus==""){bonus=0;}
-        if(malus==""){malus=0;}
-       let inforesult=parseInt(maxstat)+parseInt(bonus)+bonuspost+parseInt(malus);
-       if(inforesult>95){
-        inforesult=95;
-       }else if(inforesult<5){
-        inforesult=5;
-       }
-        let r = new Roll("1d100");
+        
+        let r = new Roll(monJetDeDes);
         var roll=r.evaluate({"async": false});
         let retour=r.result; 
         var succes="";
-        if(retour>95){//lang
-            succes="<h4 class='result' style='background:#ff3333;text-align: center;color: #fff;padding: 5px;border: 1px solid #999;'>Echec critique</h4>";
-        }else if(retour<=critique){
-            succes="<h4 class='result' style='background:#7dff33;text-align: center;color: #fff;padding: 5px;border: 1px solid #999;'>Réussite critique</h4>";
-        }else if(retour<=inforesult){
-            succes="<h4 class='result' style='background:#78be50;text-align: center;color: #fff;padding: 5px;border: 1px solid #999;'>Réussite</h4>";
-        }else{
-            succes="<h4 class='result' style='background:#ff5733;text-align: center;color: #fff;padding: 5px;border: 1px solid #999;'>Echec</h4>";
+        var texte="";
+        if(name=="Attaque" || name=="Relance"){
+            texte = "Jet de " + name + " : " + monJetDeDes;
+        }else {
+            if(retour>95){//lang
+                succes="<h4 class='result' style='background:#ff3333;text-align: center;color: #fff;padding: 5px;border: 1px solid #999;'>Echec critique</h4>";
+            }else if(retour<=5){
+                succes="<h4 class='result' style='background:#7dff33;text-align: center;color: #fff;padding: 5px;border: 1px solid #999;'>Réussite critique</h4>";
+            }else if(retour<=inforesult){
+                succes="<h4 class='result' style='background:#78be50;text-align: center;color: #fff;padding: 5px;border: 1px solid #999;'>Réussite</h4>";
+            }else{
+                succes="<h4 class='result' style='background:#ff5733;text-align: center;color: #fff;padding: 5px;border: 1px solid #999;'>Echec</h4>";
+            }
+            texte = "Jet de " + name + " : " + monJetDeDes +" - " + inforesult +succes;
         }
 
-        const texte = "Jet de " + name + " : " + jetdeDesFormule +" - " + inforesult +succes;
+        
         //roll.roll().toMessage({
         roll.toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor }),

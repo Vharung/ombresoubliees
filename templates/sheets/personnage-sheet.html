@@ -43,28 +43,24 @@
 				</div>
 				<div class="rexrow stat3">
 					<div class="grid-6col">
-						<p><label class="jetdedes" data-name="Attaque" data-dice="1d" data-attDice="{{data.data.attaque}}">{{localize 'liber.attaque'}}</label></p>
+						<p><label class="jetdedes" data-name="Attaque" data-dice="d4" data-attDice="{{data.data.attaque}}">{{localize 'liber.attaque'}}</label></p>
 						<input class="atta" name="data.attaque" type="text" value="{{data.data.attaque}}" placeholder="{{data.data.attaque}}" style="text-align: center"/>
 					</div>
 					<div class="grid-6col">
-						<p><label class="jetdedes" data-name="Relance" data-dice="1d"data-attDice="{{data.data.relance}}">{{localize 'liber.relance'}}</label></p>
+						<p><label class="jetdedes" data-name="Relance" data-dice="d4" data-attDice="{{data.data.relance}}">{{localize 'liber.relance'}}</label></p>
 						<input class="rela" name="data.relance" type="text" value="{{data.data.relance}}" placeholder="5"/>
 					</div>
 					<div class="grid-6col">
-						<p><label class="jetdedes" data-name="Chance" data-dice="1d"data-attDice="{{data.data.chance}}">{{localize 'liber.chance'}}</label></p>
+						<p><label class="jetdedes" data-name="Chance" data-dice="d100" data-attDice="{{data.data.chance}}">{{localize 'liber.chance'}}</label></p>
 						<input class="chan" name="data.chance" type="text" value="{{data.data.chance}}" placeholder="5"/>
 					</div>
 					<div class="grid-6col">
-						<p style="text-align: center" style="text-align: center"><label class="jetdedes" data-name="mot" data-dice="1d" data-attDice="{{data.data.mot}}">{{localize 'liber.mot'}}</label></p>
-						<input class="mot" name="data.mot" type="text" value="{{data.data.mot}}" placeholder="10" style="text-align: center"/>
-					</div>
-					<div class="grid-6col">
-						<p><label class="jetdedes" data-name="Initiative" data-dice="1d"data-attDice="{{data.data.initiative}}">{{localize 'liber.initiative'}}</label></p>
+						<p><label class="jetdedes" data-name="Initiative">{{localize 'liber.initiative'}}</label></p>
 						<input class="init" name="data.initiative" type="text" value="{{data.data.initiative}}" placeholder="5"/>
 					</div>
 					<div class="grid-6col">
-						<p><label class="jetdedes" data-name="Destin" data-dice="1d"data-attDice="{{data.data.destin}}">{{localize 'liber.destin'}}</label></p>
-						<input class="dest" name="data.destin" type="text" value="{{data.data.destin}}" placeholder="5"/>
+						<p><label class="jetdedes" data-name="Destin">{{localize 'liber.destin'}}</label></p>
+						<input class="destmin" name="data.destinmin" type="text" value="{{data.data.destinmin}}" placeholder="" style="width: 40%;" /><input class="dest" name="data.destin" type="text" value="{{data.data.destin}}" placeholder=""  style="width: 40%;" readonly />
 					</div>
 					
 				</div>
@@ -73,15 +69,15 @@
 			<h2 style="margin-top: 10px;">{{localize 'liber.attributs'}}</h2>
 			<div class="rexrow stat2">
 				<div class="grid-9col">
-					<p><label class="jetdedes" data-name="Physique" data-dice="1d"data-attDice="{{data.data.physique}}">{{localize 'liber.phy'}}</label></p>
+					<p><label class="jetdedes" data-name="Physique" data-dice="d100" data-attDice="{{data.data.physique}}">{{localize 'liber.phy'}}</label></p>
 					<input class="phys" name="data.physique" type="text" value="{{data.data.physique}}" placeholder="{{data.data.physique}}" style="text-align: center"/>
 				</div>
 				<div class="grid-9col">
-					<p><label class="jetdedes" data-name="Force" data-dice="1d"data-attDice="{{data.data.force}}">{{localize 'liber.for'}}</label></p>
+					<p><label class="jetdedes" data-name="Force" data-dice="d100" data-attDice="{{data.data.force}}">{{localize 'liber.for'}}</label></p>
 					<input class="forc" name="data.force" type="text" value="{{data.data.force}}" placeholder="5" style="width:40px" />
 				</div>
 				<div class="grid-9col">
-					<p><label class="jetdedes" data-name="Agilite" data-dice="1d"data-attDice="{{data.data.agilite}}">{{localize 'liber.agi'}}</label></p>
+					<p><label class="jetdedes" data-name="Agilite" data-dice="d100" data-attDice="{{data.data.agilite}}">{{localize 'liber.agi'}}</label></p>
 					<input class="agil" name="data.agilite" type="text" value="{{data.data.agilite}}" placeholder="5" style="width:40px" />
 				</div>
 				<div class="grid-9col">
@@ -89,19 +85,19 @@
 					<input class="soci" name="data.social" type="text" value="{{data.data.social}}" placeholder="10" style="text-align: center"/>
 				</div>
 				<div class="grid-9col">
-					<p><label class="jetdedes" data-name="Charisme" data-dice="1d"data-attDice="{{data.data.charisme}}">{{localize 'liber.cha'}}</label></p>
+					<p><label class="jetdedes" data-name="Charisme" data-dice="d100" data-attDice="{{data.data.charisme}}">{{localize 'liber.cha'}}</label></p>
 					<input class="char" name="data.charisme" type="text" value="{{data.data.charisme}}" placeholder="5" style="width:40px"/>
 				</div>
 				<div class="grid-9col">
-					<p><label class="jetdedes" data-name="Sagacité" data-dice="1d"data-attDice="{{data.data.sagacite}}">{{localize 'liber.sag'}}</label></p>
+					<p><label class="jetdedes" data-name="Sagacité" data-dice="d100" data-attDice="{{data.data.sagacite}}">{{localize 'liber.sag'}}</label></p>
 					<input class="saga" name="data.sagacite" type="text" value="{{data.data.sagacite}}" placeholder="5" style="width:40px"/>
 				</div>
 				<div class="grid-9col">
-					<p style="text-align: center"><label class="jetdedes" data-name="Mental" data-dice="1d" data-attDice="{{data.data.mental}}">{{localize 'liber.men'}}</label></p>
+					<p style="text-align: center"><label class="jetdedes" data-name="Mental" data-dice="d100" data-attDice="{{data.data.mental}}">{{localize 'liber.men'}}</label></p>
 					<input class="mental" name="data.mental" type="text" value="{{data.data.mental}}" placeholder="10" style="text-align: center"/>
 				</div>
 				<div class="grid-9col">
-					<p><label class="jetdedes" data-name="Astuce" data-dice="1d"data-attDice="{{data.data.astuce}}">{{localize 'liber.ast'}}</label></p>
+					<p><label class="jetdedes" data-name="Astuce" data-dice="d100" data-attDice="{{data.data.astuce}}">{{localize 'liber.ast'}}</label></p>
 					<input class="astu" name="data.ast" type="text" value="{{data.data.ast}}" placeholder="5" style="width:40px"/>
 				</div>
 				<!--div class="grid-9col">
@@ -329,13 +325,12 @@
 			            {{/each}}
 		        		</ol>
 				    <div class="grid-2col" style="text-align: center;color:#fff">
-				    	<input class="coutmax" type="text" value="" readonly><br>{{localize 'liber.maxcost'}}
 				    </div>
 				    <div class="grid-2col" style="text-align: center;color:#fff">
-				    	<input class="maxsort" type="text" value="" readonly><br>{{localize 'liber.nb'}}*
+				    	<input class="maxsort mot" name="data.mot" type="text" value="{{data.data.mot}}" placeholder="10" style="text-align: center" readonly /><br>{{localize 'liber.nb'}}
 				    </div>
 				    <div class="clear"></div>
-				    <p style="text-align: center;color:#6a7885">*{{localize 'liber.plus'}}</p>
+				    
 				</div>
 				{{!-- Lab Tab --}}
 				<div id="lab" class="tab stats" data-group="primary" data-tab="lab">
