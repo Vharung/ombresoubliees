@@ -10,8 +10,8 @@ export class ombreoublieActorSheet extends ActorSheet {
     }
 
     get template() {
-        console.log(`ombreoublie | Récupération du fichier html ${this.actor.data.type}-sheet.`);
-        return `systems/ombreoublie/templates/sheets/${this.actor.data.type}-sheet.html`;
+        console.log(`ombreoublie | Récupération du fichier html ${this.actor.type}-sheet.`);
+        return `systems/ombreoublie/templates/sheets/${this.actor.type}-sheet.html`;
     }
 
     getData(){
@@ -19,7 +19,7 @@ export class ombreoublieActorSheet extends ActorSheet {
         var poidsactor='';
         data.dtypes = ["String", "Number", "Boolean"];
         console.log(data);        
-		if (this.actor.data.type == 'personnage' || this.actor.data.type == 'pnj' || this.actor.data.type == 'monstre') {
+		if (this.actor.type == 'personnage' || this.actor.type == 'pnj' || this.actor.type == 'monstre') {
 			this._prepareCharacterItems(data);
 		}
         return data;
@@ -36,7 +36,7 @@ export class ombreoublieActorSheet extends ActorSheet {
         // Iterate through items, allocating to containers
         // let totalWeight = 0;
         for (let i of sheetData.items) {
-          let item = i.data;
+          let item = i.items;
           i.img = i.img || DEFAULT_TOKEN;
           if (i.type === 'arme') {
             inventaire.push(i);
@@ -518,9 +518,8 @@ export class ombreoublieActorSheet extends ActorSheet {
         //let bonus = event.target.dataset["actionvalue"];
         //let malus = event.target.dataset["malus"];
         //let posture = event.target.dataset["posture"];
-        let bonus =this.actor.data.data.bonus;
-        let malus =this.actor.data.data.malus;
-        //let posture =this.actor.data.data.posture;
+        let bonus =this.actor.system.bonus;
+        let malus =this.actor.system.malus;
         const name = event.target.dataset["name"];
         /*var bonuspost=0;
         var critique=5;

@@ -1,8 +1,8 @@
 export class ombreoublieItemSheet extends ItemSheet{
     get template(){
-        console.log(`ombreoublie | Récupération du fichier html ${this.item.data.type}-sheet.`);
+        console.log(`ombreoublie | Récupération du fichier html ${this.item.type}-sheet.`);
 
-        return `systems/ombreoublie/templates/sheets/${this.item.data.type}-sheet.html`;
+        return `systems/ombreoublie/templates/sheets/${this.item.type}-sheet.html`;
     }
 
     getData(){
