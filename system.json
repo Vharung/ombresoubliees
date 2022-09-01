@@ -32,5 +32,6 @@
     "url": "https://github.com/Vharung/ombresoubliees",
     "manifest": "https://raw.githubusercontent.com/Vharung/ombresoubliees/main/system.json",
     "download": "https://github.com/Vharung/ombreoubliees/archive/refs/heads/main.zip",
-    "license": "LICENSE.txt"
+    "license": "LICENSE.txt",
+    "relationships.requires":""
 }
