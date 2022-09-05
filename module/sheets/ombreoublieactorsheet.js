@@ -1,4 +1,8 @@
-export class ombreoublieActorSheet extends ActorSheet {
+/**
+ * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
+ * @extends {Actor}
+ */
+ export class ombreoublieActorSheet extends ActorSheet {
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
           classes: ["ombreoublie", "sheet", "actor"],
